@@ -1,0 +1,157 @@
+/* ========== BASIC STYLES ========== */
+
+:root {
+    --main-color: #1A1F3C;
+    --secondary-color: #2A2B4A;
+}
+
+
+body {
+  background-color: var(--main-color);
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 16px;
+  margin: 0 auto; /* top-bottom & sides */
+  padding: 0;
+}
+
+.content-wrap {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+
+/* ========== HEADER STYLES ========== */
+
+header {
+  box-sizing: border-box;
+  padding: 10px 5%; /* top-bottom & sides */
+
+  display: flex;
+  justify-content: space-between; /* push left & right to far edges; middle item evenly spaced between */
+  align-items: center; /* center everything on another */
+}
+
+header .header_title {
+  font-weight: 500;
+  font-size: 20px;
+  color: #edf0f1;
+  text-decoration: none;
+}
+
+header li, header a {
+  font-weight: 500;
+  font-size: 18px;
+  color: #edf0f1;
+  text-decoration: none;
+}
+
+.nav__social-icon {
+  font-weight: 500;
+  font-size: 23px;
+  color: white;
+}
+
+header ul {
+  list-style: none;
+}
+
+header li {
+  display: inline-block;
+  padding: 0 20px;
+}
+
+header li a {
+  transition: all 0.3s ease 0s; /* smooth transition to hover color */
+}
+header li a:hover {
+  color: var(--secondary-color);
+}
+
+header .active {
+  padding: 50px, 50px;
+  background-color: var(--secondary-color);
+  background-size: 20px;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+header .active a:hover {
+  color: lightgray;
+}
+
+
+/* ========== WRAPPER, INPUT GRID & BOX STYLES ========== */
+
+.input-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.input-grid {
+    box-sizing: border-box;
+    display: grid;
+    grid-gap: 1rem 1rem;
+    gap: 1rem 1rem;
+}
+
+.box {
+  display: grid;
+  padding: 1em;
+  background-color: var(--secondary-color);
+  position: relative;
+  box-shadow: 0 10px 30px -15px rgb(0 0 0 / 20%);
+  border-radius: 10px;
+  color: #fff;
+}
+
+.wide-box {
+  display: grid;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  padding: 1em;
+  background-color: var(--secondary-color);
+  position: relative;
+  box-shadow: 0 10px 30px -15px rgb(0 0 0 / 20%);
+  border-radius: 10px;
+  color: #fff;
+}
+
+label {
+  display: block;
+  margin: .4rem 0;
+}
+
+/* ========== TAG STYLES ========== */
+
+.tag-container {
+  border: 2px solid #ccc;
+  background: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  padding: 10px;
+  overflow-x: scroll;
+}
+.tag-container .tag {
+  margin: 5px;
+  padding: 5px 6px;
+  border-radius: 3px;
+  background: #eee;
+  display: flex;
+  align-items: center;
+  color: #333;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 1px 1px #fff;
+  cursor: default;
+}
+.tag i {
+  font-size: 16px;
+  color: #666;
+  margin-left: 5px;
+}
+
+.tag-container input {
+  width: 50px;
+  height: 25px;
+}

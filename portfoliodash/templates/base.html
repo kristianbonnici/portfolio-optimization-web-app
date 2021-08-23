@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Base Template for all of our HTML Pages -->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="stylesheet" href="static/styles.css">
+</head>
+
+<body>
+  <!-- ========== PAGE HEADER (START) ========== -->
+  <header class="header">
+
+    <!-- PAGE TITLE -->
+    <h1 class="header_title">Portfolio optimizer</h1>
+
+    <!-- NAVIGATION MENU -->
+    <nav class="nav__menu">
+        <ul>
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#">Info</a></li>
+        </ul>
+    </nav>
+
+    <!-- API LINK -->
+    <nav class="nav__menu">
+      <ul>
+        <li><a href="#" class="nav__social-icon" target="_blank">API</a></li>
+      </ul>
+    </nav>
+
+  </header>
+  <!-- ========== PAGE HEADER (END) ========== -->
+
+  <!-- ========== CONTENT (START) ========== -->
+  <div class="content-wrap">
+    <h1>Hello Portfolio!</h1>
+    {% block content_wrap %}{% endblock %}
+  </div>
+
+  <!-- ========== FLASH MESSAGES ========== -->
+
+  {% block body %}{% endblock %}
+</body>
+
+</html>
