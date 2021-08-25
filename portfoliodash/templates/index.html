@@ -7,9 +7,9 @@
 <form action="#" method="post">
   <div class="input-wrapper">
     <div class="box">
-      Stock tickers (press space after each):
+      <label for="tickers">Stock tickers (press space after each):</label>
       <div class="tag-container">
-        <input />
+        <input name="tickers">
       </div>
       <script>
         const tagContainer = document.querySelector('.tag-container');
@@ -48,8 +48,20 @@
             });
             addTags();
             input.value = '';
+            console.log(tags)
           }
         });
+
+        /* OMAAAAA */
+
+        document.addEventListener('DOMContentLoaded', ()=>{
+            document.getElementById('btn').addEventListener('click', saveJSON);
+        });
+        function saveJSON() {
+          input.value = tags;
+        }
+
+
         document.addEventListener('click', (e) => {
           console.log(e.target.tagName);
           if (e.target.tagName === 'I') {
@@ -67,15 +79,15 @@
     <div class="input-grid">
       <div class="box">
         <label for="start">Start date:</label>
-        <input type="date" min="2010-01-01" max="2025-12-31" value="2020-01-01" class="date">
+        <input type="date" name="start" min="2010-01-01" max="2025-12-31" value="2020-01-01" class="date">
       </div>
       <div class="box">
-        <label for="start">End date:</label>
-        <input type="date" min="2010-01-01" max="2025-12-31" value="2020-12-31" class="date">
+        <label for="end">End date:</label>
+        <input type="date" name="end" min="2010-01-01" max="2025-12-31" value="2020-12-31" class="date">
       </div>
       <div class="wide-box">
         <label for="min-ret">Min return: <span class="slider-value" id="slider-value"></span> %</label>
-        <input type="range" min="-10" max="30" value="0" class="slider" step="0.01" id="slider">
+        <input type="range" name="min-ret" min="-10" max="30" value="0" class="slider" step="0.01" id="slider">
         <script>
           var slider = document.getElementById("slider");
           var output = document.getElementById("slider-value");
@@ -87,12 +99,12 @@
       </div>
     </div>
   </div>
-  <input type="submit" value="OPTIMIZE" class="submit-button">
+  <input type="submit" value="OPTIMIZE" class="submit-button" id="btn">
 </form>
 
 
 {% if data %}
-  <h1>YOU HAV DATA!</h1>
+  <h1>YOU HAVE DATA!</h1>
   {% for key, value in data.items() %}
     <h3>{{value}}</h3>
   {% endfor %}

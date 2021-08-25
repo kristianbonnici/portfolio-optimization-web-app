@@ -7,7 +7,8 @@ import json
 # Blueprint
 #      * named 'dashboard'
 #      * defined at '__name__'
-#      * url_prefix will be prepended to all the URLs associated with the blueprint
+#      * url_prefix will be prepended to all the URLs
+#        associated with the blueprint
 bp = Blueprint('dashboard', __name__, url_prefix='/')
 
 
@@ -17,7 +18,9 @@ def index():
         return render_template('index.html')
     else:
         data = {}
-        data_test = request.form
+        data = request.form
+
+        #urls[request.form['code']] = {'url': request.form['url']}
 
         # open/create JSON file & save user's input
         with open('portfolio.json', 'w') as data_file:
