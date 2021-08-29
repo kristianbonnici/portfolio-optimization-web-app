@@ -97,6 +97,7 @@ header .active a:hover {
     display: grid;
     grid-gap: 1rem 1rem;
     gap: 1rem 1rem;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .box {
@@ -292,4 +293,13 @@ input[type=range]:focus::-ms-fill-upper {
 
 .submit-button:focus {
   outline: none;
+}
+
+
+/* ========== OUTPUT STYLES ========== */
+
+.plot-wrapper {
+    display: grid;
+    grid-template-columns: 6.5fr 3.5fr;
+    grid-gap: 20px;
 }

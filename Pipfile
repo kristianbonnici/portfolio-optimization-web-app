@@ -5,6 +5,10 @@ name = "pypi"
 
 [packages]
 flask = "*"
+optifolio = "==0.4.5"
+pandas-datareader = "*"
+scipy = "*"
+bokeh = "*"
 
 [dev-packages]
 

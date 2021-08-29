@@ -4,6 +4,8 @@
 
 {% block content_wrap %}
 
+<h1>Inputs:</h1>
+
 <form action="#" method="post">
   <div class="input-wrapper">
     <div class="box">
@@ -51,17 +53,12 @@
             console.log(tags)
           }
         });
-
-        /* OMAAAAA */
-
         document.addEventListener('DOMContentLoaded', ()=>{
             document.getElementById('btn').addEventListener('click', saveJSON);
         });
         function saveJSON() {
           input.value = tags;
         }
-
-
         document.addEventListener('click', (e) => {
           console.log(e.target.tagName);
           if (e.target.tagName === 'I') {
@@ -77,15 +74,23 @@
 
 
     <div class="input-grid">
+
       <div class="box">
         <label for="start">Start date:</label>
         <input type="date" name="start" min="2010-01-01" max="2025-12-31" value="2020-01-01" class="date">
       </div>
+
       <div class="box">
         <label for="end">End date:</label>
         <input type="date" name="end" min="2010-01-01" max="2025-12-31" value="2020-12-31" class="date">
       </div>
-      <div class="wide-box">
+
+      <div class="box">
+        <label for="benchmark">Benchmark ticker:</label>
+        <input type="text" name="benchmark" value="^GSPC" maxlength="8">
+      </div>
+
+      <div class="box">
         <label for="min-ret">Min return: <span class="slider-value" id="slider-value"></span> %</label>
         <input type="range" name="min-ret" min="-10" max="30" value="0" class="slider" step="0.01" id="slider">
         <script>
@@ -97,18 +102,49 @@
           }
         </script>
       </div>
+
     </div>
   </div>
   <input type="submit" value="OPTIMIZE" class="submit-button" id="btn">
 </form>
 
 
+{% if div1 %}
+  <h1>Results:</h1>
+
+  <div class="plot-wrapper">
+
+    <div class="box">
+      {{ div1 | safe }}
+      {{ script1 | safe }}
+    </div>
+
+    <div class="box">
+      {{ div2 | safe }}
+      {{ script2 | safe }}
+    </div>
+
+  </div>
+
+  <div class="box" style="margin-top: 1rem;">
+    {{ div3 | safe }}
+    {{ script3 | safe }}
+  </div>
+{% endif %}
+
+<script src="https://cdn.bokeh.org/bokeh/release/bokeh-2.3.3.min.js"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.3.3.min.js"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.3.3.min.js"
+        crossorigin="anonymous"></script>
+
+
 {% if data %}
-  <h1>YOU HAVE DATA!</h1>
+  <h1>Summary:</h1>
   {% for key, value in data.items() %}
     <h3>{{value}}</h3>
   {% endfor %}
 {% endif %}
-
 
 {% endblock %}
