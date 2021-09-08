@@ -5,12 +5,13 @@ name = "pypi"
 
 [packages]
 flask = "*"
-optifolio = "==0.4.5"
+optifolio = "==0.4.6"
 pandas-datareader = "*"
-scipy = "*"
 bokeh = "*"
 
 [dev-packages]
 
 [requires]
 python_version = "3.8"
+
+[pipenv]

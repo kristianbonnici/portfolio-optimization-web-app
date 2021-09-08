@@ -8,6 +8,10 @@
   <title>{% block title %}{% endblock %}</title>
   <link rel="icon" href="static/images/favicon.png">
   <link rel="stylesheet" href="static/styles.css">
+
+  <!-- ===== IONICONS ===== -->
+  <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
 </head>
 
 <body>
@@ -20,27 +24,41 @@
     <!-- NAVIGATION MENU -->
     <nav class="nav__menu">
         <ul>
-          <li class="active"><a href="#">HOME</a></li>
-          <li><a href="#">INFO</a></li>
+          {% if is_index == True %}
+            <li class="active"><a href="{{ url_for('dashboard.index') }}">HOME</a></li>
+            <li><a href="{{ url_for('dashboard.info') }}">INFO</a></li>
+          {% else %}
+            <li><a href="{{ url_for('dashboard.index') }}">HOME</a></li>
+            <li class="active"><a href="{{ url_for('dashboard.info') }}">INFO</a></li>
+          {% endif %}
         </ul>
     </nav>
 
     <!-- API LINK -->
     <nav class="nav__menu">
       <ul>
-        <li><a href="#" class="nav__social-icon" target="_blank">API</a></li>
+        <li>
+          <a href="https://github.com/kristianbonnici/portfolio-optimization-web-app" class="nav__social-icon" target="_blank">
+            <ion-icon name="logo-github"></ion-icon>
+          </a>
+        </li>
       </ul>
     </nav>
 
   </header>
   <!-- ========== PAGE HEADER (END) ========== -->
 
+
   <!-- ========== CONTENT (START) ========== -->
   <div class="content-wrap">
+
+    <!-- ========== FLASH MESSAGES ========== -->
+    {% for message in get_flashed_messages() %}
+    <div class="alert-message">{{ message }}</div>
+    {% endfor %}
+
     {% block content_wrap %}{% endblock %}
   </div>
-
-  <!-- ========== FLASH MESSAGES ========== -->
 
   {% block body %}{% endblock %}
 </body>

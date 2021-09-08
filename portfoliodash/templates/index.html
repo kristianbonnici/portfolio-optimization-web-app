@@ -4,7 +4,7 @@
 
 {% block content_wrap %}
 
-<h1>Inputs:</h1>
+<h1>Input:</h1>
 
 <form action="#" method="post">
   <div class="input-wrapper">
@@ -77,12 +77,12 @@
 
       <div class="box">
         <label for="start">Start date:</label>
-        <input type="date" name="start" min="2010-01-01" max="2025-12-31" value="2020-01-01" class="date">
+        <input type="date" name="start" min="1980-01-01" max="2050-12-31" value="2020-01-01" class="date">
       </div>
 
       <div class="box">
         <label for="end">End date:</label>
-        <input type="date" name="end" min="2010-01-01" max="2025-12-31" value="2020-12-31" class="date">
+        <input type="date" name="end" min="1980-01-01" max="2050-12-31" value="2020-12-31" class="date">
       </div>
 
       <div class="box">
@@ -110,7 +110,7 @@
 
 
 {% if div1 %}
-  <h1>Results:</h1>
+  <h1>Optimal Portfolio:</h1>
 
   <div class="plot-wrapper">
 
@@ -130,21 +130,56 @@
     {{ div3 | safe }}
     {{ script3 | safe }}
   </div>
-{% endif %}
 
-<script src="https://cdn.bokeh.org/bokeh/release/bokeh-2.3.3.min.js"
+<script src="https://cdn.bokeh.org/bokeh/release/bokeh-{{bokeh_version}}.min.js"
         crossorigin="anonymous"></script>
-<script src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.3.3.min.js"
+<script src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-{{bokeh_version}}.min.js"
         crossorigin="anonymous"></script>
-<script src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.3.3.min.js"
+<script src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-{{bokeh_version}}.min.js"
         crossorigin="anonymous"></script>
 
+<h1>Summary:</h1>
 
-{% if data %}
-  <h1>Summary:</h1>
-  {% for key, value in data.items() %}
-    <h3>{{value}}</h3>
-  {% endfor %}
+<div class="flex-tables box">
+  <table>
+    <tr>
+      <th>Ticker</th>
+      <th>Weight</th>
+    </tr>
+    {% for item in stock_names %}
+        {% set stock = stock_names[loop.index-1] %}
+        {% set weight = stock_weights[loop.index-1] %}
+        <tr>
+          <td>{{ stock }}</td>
+          <td>{{ '%0.1f' % weight|float }} %</td>
+        </tr>
+    {% endfor %}
+  </table>
+
+  <table>
+    <tr>
+      <th>Portfolio</th>
+      <th>Value</th>
+    </tr>
+        <tr>
+          <td>Expected Annual Return</td>
+          <td>{{ '%0.0f' % ret|float }} %</td>
+        </tr>
+        <tr>
+          <td>Expected Annual Volatility</td>
+          <td>{{ '%0.0f' % vol|float }} %</td>
+        </tr>
+        <tr>
+          <td>Risk Free Return</td>
+          <td>{{ '%0.0f' % rf_ret|float }} %</td>
+        </tr>
+        <tr>
+          <td>Sharpe Ratio</td>
+          <td>{{ '%0.2f' % sharpe|float }}</td>
+        </tr>
+  </table>
+</div>
+
 {% endif %}
 
 {% endblock %}

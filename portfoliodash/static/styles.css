@@ -17,8 +17,25 @@ body {
 }
 
 .content-wrap {
-    padding-left: 5%;
-    padding-right: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.alert-message {
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #a64452;
+  background-color: #a64452;
+  color: white;
+}
+
+h1, h2, h3 {
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
 
 
@@ -49,7 +66,7 @@ header li, header a {
 
 .nav__social-icon {
   font-weight: 500;
-  font-size: 23px;
+  font-size: 35px;
   color: white;
 }
 
@@ -66,7 +83,7 @@ header li a {
   transition: all 0.3s ease 0s; /* smooth transition to hover color */
 }
 header li a:hover {
-  color: #25aae1;
+  color: #40e495;
 }
 
 header .active {
@@ -302,4 +319,49 @@ input[type=range]:focus::-ms-fill-upper {
     display: grid;
     grid-template-columns: 6.5fr 3.5fr;
     grid-gap: 20px;
+}
+
+
+table {
+  border-collapse: collapse;
+  min-width: 200px;
+}
+
+td, th {
+    border: solid 1px white;
+    padding: 12px 15px;
+    text-align: center;
+}
+
+th {
+  background-color: #2bb673;
+  color: #ffffff;
+}
+
+td {
+  background-color: var(--secondary-color);
+}
+
+.flex-tables {
+  display: inline-flex;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+
+/* ========== INFO PAGE STYLES ========== */
+
+.text-box {
+  padding: 1em;
+  background-color: var(--secondary-color);
+  position: relative;
+  box-shadow: 0 10px 30px -15px rgb(0 0 0 / 20%);
+  border-radius: 10px;
+  margin: 20px;
+  color: #fff;
+}
+
+.text-box h2 {
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
