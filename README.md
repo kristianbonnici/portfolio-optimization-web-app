@@ -4,7 +4,7 @@
 
 ## Live app
 
-You can find a running system to use [here](#) (soming soon).
+You can find a running system to use [here](#) (coming soon).
 
 ## Introduction
 `portfolio-optimization-web-app` is a web application for generating optimal portfolios based on Sharpe Ratio.
