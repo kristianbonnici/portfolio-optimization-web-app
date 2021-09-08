@@ -12,8 +12,12 @@ You can find a running system to use [here](#) (soming soon).
 
 ## Screenshots
 
-![Screenshot1](/static/images/Screenshot1.png)
-![Screenshot2](/static/images/Screenshot2.png)
+<p align="center">
+  <img src="https://github.com/kristianbonnici/portfolio-optimization-web-app/blob/master/portfoliodash/static/images/Screenshot1.png?raw=true" width="800" />
+</p>
+<p align="center">
+  <img src="https://github.com/kristianbonnici/portfolio-optimization-web-app/blob/master/portfoliodash/static/images/Screenshot2.png?raw=true" width="800" />
+</p>
 
 ## Built With
 
