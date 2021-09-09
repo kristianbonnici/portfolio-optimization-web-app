@@ -1,1 +1,1 @@
-web: gunicorn -b :$PORT portfoliodash:dashboard
+web: gunicorn -b :$PORT app:dashboard
