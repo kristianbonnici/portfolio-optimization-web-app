@@ -8,6 +8,8 @@ flask = "*"
 optifolio = "==0.4.6"
 pandas-datareader = "*"
 bokeh = "*"
+python-dotenv = "*"
+gunicorn = "*"
 
 [dev-packages]
 
