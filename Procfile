@@ -1,1 +1,1 @@
-web: gunicorn "portfoliodash:create_app()"
+web: gunicorn portfoliodash:app
