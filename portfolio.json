@@ -1,1 +1,1 @@
-{"tickers": ["AMZN ,AAPL ,MSFT ,NFLX ,TSLA ,BABA ,JD "], "start": ["2015-01-01"], "end": ["2019-12-31"], "benchmark": ["^GSPC"], "min-ret": ["0"]}
+{"tickers": ["NIO ,AMZN "], "start": ["2020-01-01"], "end": ["2020-12-31"], "benchmark": ["^GSPC"], "min-ret": ["0"]}

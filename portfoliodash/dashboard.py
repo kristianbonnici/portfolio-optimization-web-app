@@ -9,7 +9,6 @@ from optifolio import PortfolioOptimizer
 from bokeh.embed import components
 import bokeh
 
-
 # Blueprint
 #      * named 'dashboard'
 #      * defined at '__name__'
@@ -42,7 +41,6 @@ def index():
         try:
             data = web.DataReader(tickers, 'yahoo',
                                   start=start_date, end=end_date)['Adj Close']
-            print(data)
         except:
             flash("""Failed loading data from the Yahoo Finance API.""")
             return redirect(url_for('dashboard.index'))
