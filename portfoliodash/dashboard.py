@@ -9,6 +9,7 @@ from optifolio import PortfolioOptimizer
 from bokeh.embed import components
 import bokeh
 
+
 # Blueprint
 #      * named 'dashboard'
 #      * defined at '__name__'
