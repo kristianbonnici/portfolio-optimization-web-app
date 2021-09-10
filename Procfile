@@ -1,1 +1,1 @@
-web: gunicorn dashboard:bp
+web: gunicorn "__init__:create_app()"
