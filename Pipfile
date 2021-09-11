@@ -10,6 +10,7 @@ pandas-datareader = "*"
 bokeh = "*"
 gunicorn = "*"
 scipy = "*"
+typing-extensions = "*"
 
 [dev-packages]
 
