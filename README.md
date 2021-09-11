@@ -22,7 +22,7 @@ You can find a running system to use at [portfolio-optim.herokuapp.com/](https:/
 ## The architecture
 
 <p align="center">
-  <img src="https://github.com/kristianbonnici/portfolio-optimization-web-app/blob/master/portfoliodash/static/images/Portfolio-Optimizer-Architecture.drawio.svg?raw=true" width="800" />
+  <img src="https://github.com/kristianbonnici/portfolio-optimization-web-app/blob/master/portfoliodash/static/images/Portfolio-Optimizer-Architecture.drawio.png?raw=true" width="800" />
 </p>
 
 1. The user navigates to the site, feeds input details, and presses the "OPTIMIZE" button.
