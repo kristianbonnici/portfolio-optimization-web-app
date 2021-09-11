@@ -22,7 +22,7 @@ You can find a running system to use at [portfolio-optim.herokuapp.com/](https:/
 ## The architecture
 
 <p align="center">
-  <img src="https://github.com/kristianbonnici/portfolio-optimization-web-app/blob/master/portfoliodash/static/images/Portfolio-Optimizer-Architecture.drawio.png?raw=true" width="800" />
+  <img src="https://github.com/kristianbonnici/portfolio-optimization-web-app/blob/master/portfoliodash/static/images/Portfolio-Optimizer-Architecture.drawio.svg?raw=true" width="800" />
 </p>
 
 1. The user navigates to the site, feeds input details, and presses the "OPTIMIZE" button.
@@ -31,16 +31,15 @@ You can find a running system to use at [portfolio-optim.herokuapp.com/](https:/
 
 ## Built With
 
-**Back End:**
-- **[Flask](https://flask.palletsprojects.com/en/2.0.x/)** - The web application framework used
-- **[Python](https://www.python.org/)** - Backend language used
-- **[Optifolio [PyPI Package]](https://github.com/kristianbonnici/optifolio)** - My package used for portfolio optimization
-
 **Front End:**
 - **HTML** - used to design the front-end portion
 - **CSS** - used to style the front-end portion
 - **JavaScript** - used to create some interactivity
 
+**Back End:**
+- **[Flask](https://flask.palletsprojects.com/en/2.0.x/)** - The web application framework used
+- **[Python](https://www.python.org/)** - Backend language used
+- **[Optifolio [PyPI Package]](https://github.com/kristianbonnici/optifolio)** - My package used for portfolio optimization
 
 ## Author
 
