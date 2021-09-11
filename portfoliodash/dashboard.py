@@ -99,9 +99,6 @@ def index():
         stock_weights = model.stock_weights
         stock_names = model.stock_names
 
-        print("Weights:", weights)
-        print("Stock weights:", stock_weights)
-
         # open/create JSON file & save user's input
         with open('portfolio.json', 'w') as data_file:
             json.dump(data_dict, data_file)  # save url to JSON
