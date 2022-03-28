@@ -18,9 +18,4 @@ def create_app():
     from . import dashboard
     app.register_blueprint(dashboard.bp)
 
-    # a simple page that says hello
-    @app.route('/hello')
-    def hello():
-        return 'Hello, World!'
-
     return app
