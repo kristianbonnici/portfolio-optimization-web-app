@@ -4,7 +4,7 @@
 
 ## Live app
 
-You can find a running system to use at [portfolio-optim.herokuapp.com/](https://portfolio-optim.herokuapp.com/).
+You can find a running system to use at [https://portfolio-optim.onrender.com/](https://portfolio-optim.onrender.com/).
 
 ## Introduction
 `portfolio-optimization-web-app` is a web application for generating optimal portfolios based on Sharpe Ratio.
@@ -29,6 +29,8 @@ You can find a running system to use at [portfolio-optim.herokuapp.com/](https:/
 2. Yahoo Finance API intakes the details and retrieves the requested data.
 3. [Optifolio](https://github.com/kristianbonnici/optifolio) intakes the data to optimize the portfolio and display the results on the page.
 
+> **Note**
+> Starting Nov. 14, 2022 the app is shifted from Heroku to [Render](https://render.com/) cloud hosting.
 ## Built With
 
 **Front End:**
